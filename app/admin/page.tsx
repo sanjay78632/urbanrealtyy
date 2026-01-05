@@ -28,9 +28,13 @@ export default function AdminPage() {
   }, [router, supabase])
 
   const handleLogout = async () => {
-    await supabase.auth.signOut()
-    router.push("/auth/login")
-  }
+  const confirmLogout = window.confirm("Are you sure you want to logout?")
+  if (!confirmLogout) return
+
+  await supabase.auth.signOut()
+  router.push("/auth/login")
+}
+
 
   if (loading) {
     return (
@@ -59,13 +63,13 @@ export default function AdminPage() {
           </Link>
 
           <Button
-            variant="destructive"
-            onClick={handleLogout}
-            className="gap-2"
-          >
-            <LogOut className="w-4 h-4" />
-            Logout
-          </Button>
+  onClick={handleLogout}
+  className="bg-red-600 hover:bg-red-700 text-white gap-2"
+>
+  <LogOut className="w-4 h-4" />
+  Logout
+</Button>
+
         </div>
       </div>
 
