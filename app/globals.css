@@ -1,0 +1,70 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* =========================
+   ROOT (LIGHT MODE ONLY)
+   ========================= */
+:root {
+  --background: #ffffff;
+  --foreground: #000000;
+
+  --card: #ffffff;
+  --card-foreground: #000000;
+
+  --popover: #ffffff;
+  --popover-foreground: #000000;
+
+  /* Brand (Rose / Pink) */
+  --primary: #e11d48; /* rose-600 */
+  --primary-foreground: #ffffff;
+
+  --secondary: #f4f4f5;
+  --secondary-foreground: #000000;
+
+  --muted: #f4f4f5;
+  --muted-foreground: #6b7280;
+
+  --accent: #fce7f3;
+  --accent-foreground: #9f1239;
+
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+
+  --border: #e5e7eb;
+  --input: #e5e7eb;
+  --ring: #e11d48;
+
+  --radius: 0.75rem;
+}
+
+/* =========================
+   BASE STYLES
+   ========================= */
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont,
+      "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+  }
+}
+
+/* =========================
+   GLOBAL MOUSE GLOW
+   ========================= */
+.mouse-glow {
+  position: fixed;
+  inset: -200px;
+  pointer-events: none;
+  z-index: 0;
+  background: radial-gradient(
+    420px at var(--mx) var(--my),
+    rgba(225, 29, 72, 0.18),
+    transparent 60%
+  );
+  transition: background 0.08s linear;
+}
