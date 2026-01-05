@@ -1,49 +1,49 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Plus, LogOut } from "lucide-react"
-import { createClient } from "@/lib/supabase/client"
-import { useRouter } from "next/navigation"
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { Plus, LogOut } from "lucide-react";
+import { createClient } from "@/lib/supabase/client";
+import { useRouter } from "next/navigation";
 
 interface AdminHeaderProps {
-  user: any
+  user: any;
 }
 
 export function AdminHeader({ user }: AdminHeaderProps) {
-  const supabase = createClient()
-  const router = useRouter()
+  const supabase = createClient();
+  const router = useRouter();
 
   const handleLogout = async () => {
-    await supabase.auth.signOut()
-    router.push("/auth/login")
-  }
+    await supabase.auth.signOut();
+    router.push("/auth/login");
+    router.refresh();
+  };
 
   return (
     <div className="mb-8">
-      <div className="flex items-center justify-between mb-4">
-        {/* Left */}
+      <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+        {/* LEFT */}
         <div>
-          <h1 className="text-3xl font-bold mb-1">Welcome Back!</h1>
+          <h1 className="text-3xl font-bold">Admin Dashboard</h1>
           <p className="text-muted-foreground">
-            Manage your property listings
+            Logged in as <span className="font-medium">{user?.email}</span>
           </p>
         </div>
 
-        {/* Right */}
-        <div className="flex items-center gap-3">
+        {/* RIGHT ACTIONS */}
+        <div className="flex gap-3">
           <Link href="/admin/add-property">
-            <Button size="lg" className="gap-2">
+            <Button className="gap-2">
               <Plus className="w-4 h-4" />
-              Add New Property
+              Add Property
             </Button>
           </Link>
 
           <Button
-            variant="outline"
-            size="lg"
-            className="gap-2"
+            variant="destructive"
             onClick={handleLogout}
+            className="gap-2"
           >
             <LogOut className="w-4 h-4" />
             Logout
@@ -51,5 +51,5 @@ export function AdminHeader({ user }: AdminHeaderProps) {
         </div>
       </div>
     </div>
-  )
+  );
 }
