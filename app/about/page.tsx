@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function AboutPage() {
   return (
     <main className="max-w-5xl mx-auto px-4 py-12">
@@ -16,6 +18,7 @@ export default function AboutPage() {
         stress-free.
       </p>
 
+      {/* Mission */}
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-2 text-red-600">
           Our Mission
@@ -27,6 +30,7 @@ export default function AboutPage() {
         </p>
       </section>
 
+      {/* Vision */}
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-2 text-red-600">
           Our Vision
@@ -37,6 +41,7 @@ export default function AboutPage() {
         </p>
       </section>
 
+      {/* Commitment */}
       <section className="mb-10">
         <h2 className="text-2xl font-semibold mb-4 text-red-600">
           Our Commitment
@@ -69,13 +74,33 @@ export default function AboutPage() {
         </ul>
       </section>
 
-      <section>
-        <h2 className="text-2xl font-semibold mb-4 text-red-600">
-          Meet Our Team
-        </h2>
-        <p className="text-gray-700">
-          Founder – UrbanRealtyy
-        </p>
+      {/* Founder */}
+      <section className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+        <div className="md:col-span-1 flex justify-center">
+          <Image
+            src="/founder.jpg"
+            alt="Founder - UrbanRealtyy"
+            width={280}
+            height={360}
+            className="rounded-xl object-cover shadow-md"
+            priority
+          />
+        </div>
+
+        <div className="md:col-span-2">
+          <h2 className="text-2xl font-semibold mb-2 text-red-600">
+            Meet the Founder
+          </h2>
+          <p className="text-gray-700 mb-2 font-medium">
+            Founder – UrbanRealtyy
+          </p>
+          <p className="text-gray-700">
+            With a strong understanding of the real estate market and a
+            customer-first mindset, UrbanRealtyy was founded with a clear goal —
+            to make property buying, selling, and renting simple, transparent,
+            and trustworthy for everyone.
+          </p>
+        </div>
       </section>
     </main>
   );
