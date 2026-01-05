@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation"
 import { createClient } from "@/lib/supabase/client"
 import { PropertyList } from "@/components/admin/property-list"
 import { Button } from "@/components/ui/button"
-import { Loader } from "lucide-react"
+import { Loader, LogOut } from "lucide-react"
 import Link from "next/link"
 
 export default function AdminPage() {
@@ -27,6 +27,11 @@ export default function AdminPage() {
     checkAuth()
   }, [router, supabase])
 
+  const handleLogout = async () => {
+    await supabase.auth.signOut()
+    router.push("/auth/login")
+  }
+
   if (loading) {
     return (
       <div className="flex min-h-screen items-center justify-center">
@@ -46,11 +51,22 @@ export default function AdminPage() {
           </p>
         </div>
 
-        <Link href="/admin/add-property">
-          <Button className="bg-rose-600 hover:bg-rose-700">
-            + Add Property
+        <div className="flex gap-3">
+          <Link href="/admin/add-property">
+            <Button className="bg-rose-600 hover:bg-rose-700">
+              + Add Property
+            </Button>
+          </Link>
+
+          <Button
+            variant="destructive"
+            onClick={handleLogout}
+            className="gap-2"
+          >
+            <LogOut className="w-4 h-4" />
+            Logout
           </Button>
-        </Link>
+        </div>
       </div>
 
       <PropertyList userId={user.id} />
