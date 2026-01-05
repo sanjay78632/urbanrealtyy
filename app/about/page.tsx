@@ -91,9 +91,13 @@ export default function AboutPage() {
           <h2 className="text-2xl font-semibold mb-2 text-red-600">
             Meet the Founder
           </h2>
-          <p className="text-gray-700 mb-2 font-medium">
-            Founder – UrbanRealtyy
+          <p className="text-gray-800 mb-1 font-semibold text-lg">
+              Mr. Deepak Tulsiani
           </p>
+          <p className="text-gray-700 mb-2 font-medium">
+             Founder – UrbanRealtyy
+          </p>
+
           <p className="text-gray-700">
             With a strong understanding of the real estate market and a
             customer-first mindset, UrbanRealtyy was founded with a clear goal —
