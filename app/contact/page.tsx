@@ -25,7 +25,7 @@ export default function ContactPage() {
 
             <p>
               <strong className="text-rose-600">Phone:</strong>{" "}
-              09033806695
+              7990900080
             </p>
 
             <p className="leading-relaxed">
