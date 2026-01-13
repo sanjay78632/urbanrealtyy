@@ -17,18 +17,17 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-40 w-full border-b bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/70">
-      <nav className="mx-auto flex min-h-[88px] max-w-7xl items-center justify-between px-4">
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-3">
+      <nav className="mx-auto flex min-h-[96px] max-w-7xl items-center justify-between px-4">
+        {/* Logo ONLY */}
+        <Link href="/" className="flex items-center">
           <Image
             src="/logo.png"
             alt="UrbanRealtyy Logo"
-            width={52}
-            height={52}
+            width={72}
+            height={72}
             priority
             className="object-contain"
           />
-          <span className="text-xl font-semibold">UrbanRealtyy</span>
         </Link>
 
         {/* Desktop Menu */}
@@ -108,7 +107,7 @@ export function Navbar() {
             </a>
 
             <div className="flex gap-4 pt-2">
-              <Facebook className="h-5 w-5" />
+              {/* <Facebook className="h-5 w-5" /> */}
               <Instagram className="h-5 w-5" />
               <FaWhatsapp className="h-5 w-5" />
             </div>
