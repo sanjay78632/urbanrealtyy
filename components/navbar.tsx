@@ -17,17 +17,18 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-40 w-full border-b bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/70">
-      <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4">
+      <nav className="mx-auto flex min-h-[88px] max-w-7xl items-center justify-between px-4">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2">
+        <Link href="/" className="flex items-center gap-3">
           <Image
             src="/logo.png"
             alt="UrbanRealtyy Logo"
-            width={28}
-            height={28}
+            width={52}
+            height={52}
             priority
+            className="object-contain"
           />
-          <span className="text-lg font-semibold">UrbanRealtyy</span>
+          <span className="text-xl font-semibold">UrbanRealtyy</span>
         </Link>
 
         {/* Desktop Menu */}
@@ -78,7 +79,7 @@ export function Navbar() {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden h-9 w-9 rounded-md border flex items-center justify-center"
+          className="md:hidden h-10 w-10 rounded-md border flex items-center justify-center"
           onClick={() => setOpen(!open)}
         >
           {open ? <X /> : <Menu />}
@@ -88,7 +89,7 @@ export function Navbar() {
       {/* Mobile Drawer */}
       {open && (
         <div className="md:hidden border-t bg-white">
-          <div className="px-4 py-3 flex flex-col gap-3">
+          <div className="px-4 py-4 flex flex-col gap-4">
             <Link href="/about" onClick={() => setOpen(false)}>About Us</Link>
             <Link href="/contact" onClick={() => setOpen(false)}>Contact Us</Link>
             <Link href="/#browse" onClick={() => setOpen(false)}>Browse Properties</Link>
