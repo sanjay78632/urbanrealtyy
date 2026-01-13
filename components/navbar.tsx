@@ -6,8 +6,8 @@ import { useState } from "react";
 import { Menu, X, Phone, Instagram, Facebook } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 
-const PHONE = process.env.NEXT_PUBLIC_PHONE || "09033806695";
-const WHATSAPP = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "919033806695";
+const PHONE = process.env.NEXT_PUBLIC_PHONE || "7990900080";
+const WHATSAPP = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "917990900080";
 
 export function Navbar() {
   const [open, setOpen] = useState(false);

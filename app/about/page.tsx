@@ -92,7 +92,7 @@ export default function AboutPage() {
             Meet the Founder
           </h2>
           <p className="text-gray-800 mb-1 font-semibold text-lg">
-              Mr. Deepak Tulsiani
+              Deepak Tulsiani
           </p>
           <p className="text-gray-700 mb-2 font-medium">
              Founder – UrbanRealtyy
