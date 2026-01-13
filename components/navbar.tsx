@@ -107,7 +107,7 @@ export function Navbar() {
             </a>
 
             <div className="flex gap-4 pt-2">
-              {/* <Facebook className="h-5 w-5" /> */}
+             
               <Instagram className="h-5 w-5" />
               <FaWhatsapp className="h-5 w-5" />
             </div>
@@ -117,3 +117,6 @@ export function Navbar() {
     </header>
   );
 }
+
+
+
